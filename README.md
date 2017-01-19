@@ -40,8 +40,8 @@ You can start the server by either running node locally or launching a docker co
 
 ## Docker
 
-> docker run -p 5000:5000 -v path_to_the_config.yml:/app/config.yml --name simple-cms-server simple-cms-server:1.0.0
+> docker run -p 5000:5000 -v path_to_the_config.yml:/app/config.yml --name simple-cms-server thingleme/simple-cms-server:v1.0.0
 
 If you want to specify a different port, you can use the `e` switch and provide the `PORT` paramenter.
 
-> docker run -e PORT=5001 -p 5001:5001 -v path_to_the_config.yml:/app/config.yml --name simple-cms-server simple-cms-server:1.0.0
+> docker run -e PORT=5001 -p 5001:5001 -v path_to_the_config.yml:/app/config.yml --name simple-cms-server thingleme/simple-cms-server:v1.0.0
