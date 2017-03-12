@@ -1,7 +1,7 @@
 # Introduction
 This server allows to run a minimal CMS that is compatible with the [Thingle.me](https://thingle.me)'s `Generic CMS plugin` API specifications.
 
-The files must accordingly be listed in the `config.yml` configuration file.
+Documents must accordingly be listed in the `config.yml` configuration file.
 
 # Configuration
 Create a configuration file listing all the documents you want to use with [Thingle.me](https://thingle.me)
