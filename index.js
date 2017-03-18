@@ -45,7 +45,7 @@ function docsWithTranslations(doc) {
 config.forEach( function (domain) {
     let domain_uuid = domain.domain_uuid;
     domains[domain_uuid] = {};
-    domains[domain_uuid].access_token = domain.access_token;
+    domains[domain_uuid].uuid = domain.domain_uuid;
     domains[domain_uuid].tags = computeTagList(domain);
     domains[domain_uuid].files = domain.files;
 })
@@ -64,7 +64,7 @@ app.use(function (req, res, next) {
 
 app.use(function accessTokenOK(req, res, next) {
     let access_token = req.query.access_token;
-    if (access_token !== req.domain.access_token) {
+    if (access_token !== process.env[req.domain.uuid.substr(0,8)]) {
         return res.status(403).end();
     }
     return next();
