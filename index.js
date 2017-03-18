@@ -15,8 +15,6 @@ try {
     process.exit();
 }
 
-var domains = {};
-
 function computeTagList(domain) {
     let tags = {};
     domain.files.forEach(function (entry) {
@@ -28,6 +26,16 @@ function computeTagList(domain) {
     })
     return tags;
 }
+
+var domains = config.reduce( function (acc, domain) {
+    let domain_uuid = domain.domain_uuid;
+    acc[domain_uuid] = {
+        uuid: domain_uuid,
+        tags: computeTagList(domain),
+        files: domain.files
+    };
+    return acc;
+}, {});
 
 function filterRequiredLanguage(language) {
     return function (doc) {
@@ -41,14 +49,6 @@ function filterRequiredLanguage(language) {
 function docsWithTranslations(doc) {
     return doc.i18n.length > 0;
 }
-
-config.forEach( function (domain) {
-    let domain_uuid = domain.domain_uuid;
-    domains[domain_uuid] = {};
-    domains[domain_uuid].uuid = domain.domain_uuid;
-    domains[domain_uuid].tags = computeTagList(domain);
-    domains[domain_uuid].files = domain.files;
-})
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -128,4 +128,4 @@ app.set('port', (process.env.PORT || 5000));
 
 app.listen(app.get('port'), function () {
   console.log('The Simple CMS server with file based configuration is starting on port:', app.get('port'));
-})
+});
