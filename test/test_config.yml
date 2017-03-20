@@ -1,0 +1,28 @@
+ - domain_uuid: a2d2c8a0-d994-11e7-9c32-e3ed0fb5736a
+   files:
+     - document_id: "1"
+       format: "application/pdf"
+       description: "The Pro Git book"
+       tags:
+         - "Git"
+         - "Pro"
+         - "Book"
+       i18n:
+         - language: "en"
+           url: "https://progit2.s3.amazonaws.com/en/2016-03-22-f3531/progit-en.1084.pdf"
+           description: "The Pro Git book"
+           created_at: 2014-01-01 11:02:57
+           updated_at: 2017-03-17 12:00:00
+     - document_id: "2"
+       format: "application/pdf"
+       description: "The Pro Git book - Second edition"
+       tags:
+         - "Cognitive Science"
+         - "Douglas Hofstadter"
+         - "Book"
+       i18n:
+         - language: "en"
+           url: "https://www.physixfan.com/wp-content/files/GEBen.pdf"
+           description: "Gödel, Escher, Bach: An Eternal Golden Braid"
+           created_at: 1979-01-01 12:00:00
+           updated_at: 2017-03-17 12:00:00
