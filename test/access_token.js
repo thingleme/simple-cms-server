@@ -19,4 +19,13 @@ describe('Authorization', () => {
                 done();
             });
     });
+    it('it should allow request', (done) => {
+        chai.request(server)
+            .get('/')
+            .query({access_token: "test"})
+            .end((err, res) => {
+                res.should.have.status(200);
+                done();
+            });
+    });
 });
