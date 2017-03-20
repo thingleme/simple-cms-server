@@ -1,9 +1,13 @@
-# Introduction
+# Simple-Cms-Server
+
+[![Build Status](https://travis-ci.org/thingleme/simple-cms-server.svg?branch=master)](https://travis-ci.org/thingleme/simple-cms-server)
+
+## Introduction
 This server allows to run a minimal CMS that is compatible with the [Thingle.me](https://thingle.me)'s `Generic CMS plugin` API specifications.
 
 Documents must accordingly be listed in the `config.yml` configuration file.
 
-# Configuration
+## Configuration
 Create a configuration file listing all the documents you want to use with [Thingle.me](https://thingle.me)
 
 Example of `config.yml`
@@ -39,14 +43,14 @@ your domain_uuid is `a2d4c8a0-d994-11e6-9c32-e3ed0fb5736e` and you have configur
 
 > $ a2d4c8a0=mysecretpwd npm start
 
-# Run
+## Run
 
 You can start the server by either locally running node or launching a docker container. If not otherwise provided, the default port is 5000.
 
-## Node.js
+### Node.js
 
 > $ <first_8_digits_of_your_domain_uuid>=<your_access_token> npm start
 
-## Docker
+### Docker
 
 > $ docker run -e PORT=5001 -e <first_8_digits_of_your_domain_uuid>=<your_access_token> -p 5001:5001 -v path_to_the_config.yml:/app/config.yml --name simple-cms-server thingleme/simple-cms-server:v1.1.0
