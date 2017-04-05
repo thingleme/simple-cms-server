@@ -35,13 +35,13 @@ Example of `config.yml`
 # Security
 In order to provide a secure way to filter out unauthorized incoming requests, you need to set an env variable to your `access_token` (the same used in the Thingle.me Generic CMS plugin configuration).
 
-- The `name` of this variable must be equal to the first 8 characters of your `domain_uuid`
+- The `name` of this variable must start with the prefix "dom_" followed by the first 8 characters of your `domain_uuid`
 - Its `value` must match the `access_token`
 
 Example:
 your domain_uuid is `a2d4c8a0-d994-11e6-9c32-e3ed0fb5736e` and you have configured `mysecretpwd` as secret access_token in your Thingle.me plugin configuration. To start your `simple-cms-server`, just run:
 
-> $ a2d4c8a0=mysecretpwd npm start
+> $ dom_a2d4c8a0=mysecretpwd npm start
 
 ## Run
 
@@ -49,8 +49,8 @@ You can start the server by either locally running node or launching a docker co
 
 ### Node.js
 
-> $ <first_8_digits_of_your_domain_uuid>=<your_access_token> npm start
+> $ dom_<first_8_digits_of_your_domain_uuid>=<your_access_token> npm start
 
 ### Docker
 
-> $ docker run -e PORT=5001 -e <first_8_digits_of_your_domain_uuid>=<your_access_token> -p 5001:5001 -v path_to_the_config.yml:/app/config.yml --name simple-cms-server thingleme/simple-cms-server:v1.1.0
+> $ docker run -e PORT=5001 -e dom_<first_8_digits_of_your_domain_uuid>=<your_access_token> -p 5001:5001 -v path_to_the_config.yml:/app/config.yml --name simple-cms-server thingleme/simple-cms-server:v1.1.0
