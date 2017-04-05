@@ -1,4 +1,4 @@
-FROM node:4
+FROM node:7.8-alpine
 
 MAINTAINER ThingleMe
 

@@ -53,4 +53,4 @@ You can start the server by either locally running node or launching a docker co
 
 ### Docker
 
-> $ docker run -e PORT=5001 -e dom_<first_8_digits_of_your_domain_uuid>=<your_access_token> -p 5001:5001 -v path_to_the_config.yml:/app/config.yml --name simple-cms-server thingleme/simple-cms-server:v1.1.0
+> $ docker run -e PORT=5001 -e dom_<first_8_digits_of_your_domain_uuid>=<your_access_token> -p 5001:5001 -v path_to_the_config.yml:/app/config.yml --name simple-cms-server thingleme/simple-cms-server:v1.2.1
