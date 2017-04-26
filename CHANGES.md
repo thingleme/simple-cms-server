@@ -1,7 +1,7 @@
 # 1.2.2
 
 - **bug fix**: wrong tag filter name used in queries (`tags_array` --> `tags`)
-- ** doc enhancement **: the `config.yaml` example shows how to include a video
+- **doc enhancement**: the `config.yaml` example shows how to include a video
 
 # 1.2.1
 
