@@ -23,10 +23,10 @@ function browse(req, res) {
         docs = docs.map(filterRequiredLanguage(language)).filter(docsWithTranslations);
     }
 
-    if (req.query.tags_array != null) {
+    if (req.query.tags != null) {
         docs = docs.filter(function(doc){
             let shouldReturn = true;
-            for (var tag of req.query.tags_array.split("_")) {
+            for (var tag of req.query.tags.split("_")) {
                 shouldReturn = shouldReturn && (doc.tags.indexOf(tag) > -1);
             }
             return shouldReturn;

@@ -26,7 +26,7 @@ describe('/GET browse', () => {
     it('it should return only GEB book matching the \'Cognitive Science\' tag', (done) => {
         chai.request(server)
             .get('/browse')
-            .query({tags_array:'Cognitive Science'})
+            .query({tags:'Cognitive Science'})
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
@@ -38,7 +38,7 @@ describe('/GET browse', () => {
     it('it should return no italian docs', (done) => {
         chai.request(server)
             .get('/browse')
-            .query({tags_array:'Cognitive Science', language: 'it'})
+            .query({tags:'Cognitive Science', language: 'it'})
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
