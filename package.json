@@ -1,6 +1,6 @@
 {
   "name": "simple-cms-server",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "The Simple CMS server with file based configuration",
   "main": "index.js",
   "scripts": {

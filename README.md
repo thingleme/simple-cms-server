@@ -27,6 +27,18 @@ Example of `config.yml`
              description: "The Pro Git book"
              created_at: 2014-01-01 11:02:57
              updated_at: 2014-01-01 11:03:14
+       - document_id: "2"
+         description: "Thingle.me video"
+         tags:
+           - "Customer Service"
+           - "Products"
+           - "Innovation"
+         i18n:
+           - language: "en"
+             url: "https://www.youtube.com/watch?v=pCUyt-9m9tA"
+             description: "Thingle.me video"
+             created_at: 2017-02-01 12:00:00
+             updated_at: 2017-02-01 12:00:00
 ```
 
 ## Notes:
@@ -53,4 +65,4 @@ You can start the server by either locally running node or launching a docker co
 
 ### Docker
 
-> $ docker run -e PORT=5001 -e dom_<first_8_digits_of_your_domain_uuid>=<your_access_token> -p 5001:5001 -v path_to_the_config.yml:/app/config.yml --name simple-cms-server thingleme/simple-cms-server:v1.2.1
+> $ docker run -e PORT=5001 -e dom_<first_8_digits_of_your_domain_uuid>=<your_access_token> -p 5001:5001 -v path_to_the_config.yml:/app/config.yml --name simple-cms-server thingleme/simple-cms-server:v1.2.2
